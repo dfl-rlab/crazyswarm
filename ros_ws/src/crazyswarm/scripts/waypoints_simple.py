@@ -5,13 +5,13 @@ import numpy as np
 from pycrazyswarm import Crazyswarm
 
 
-Z = 1.0
+Z = 0.6
 TAKEOFF_DURATION = 2.5
 GOTO_DURATION = 3.0
 WAYPOINTS = np.array([
-    (1.0, 0.0, Z),
-    (1.0, 1.0, Z),
-    (0.0, 1.0, Z),
+    (0.5, 0.0, Z),
+    (0.5, 0.5, Z),
+    (0.0, 0.5, Z),
     (0.0, 0.0, Z),
 ])
 
