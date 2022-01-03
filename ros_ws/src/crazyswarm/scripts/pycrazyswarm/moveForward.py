@@ -1,10 +1,11 @@
-"""Takeoff-hover-land for one CF. Useful to validate hardware config."""
+
 
 from pycrazyswarm import Crazyswarm
 
 
 TAKEOFF_DURATION = 2.5
-HOVER_DURATION = 3.0
+HOVER_DURATION = 5.0
+MOVE_DURATION = 2.5
 
 
 def main():
@@ -13,13 +14,11 @@ def main():
     cf = swarm.allcfs.crazyflies[0]
 
     cf.takeoff(targetHeight=1.0, duration=TAKEOFF_DURATION)
-    timeElapsed = 0
-    while timeElapsed < TAKEOFF_DURATION + HOVER_DURATION:
-        print(cf.position())
-        timeHelper.sleep(0.5)
-        timeElapsed += 0.5
-        
+    timeHelper.sleep(TAKEOFF_DURATION + HOVER_DURATION)
     # print(cf.getParam(range.zrange))
+    cf.goTo([0.3, 0, 0], 0, MOVE_DURATION)
+    timeHelper.sleep(MOVE_DURATION)
+
     cf.land(targetHeight=0.04, duration=2.5)
     timeHelper.sleep(TAKEOFF_DURATION)
 

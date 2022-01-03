@@ -10,7 +10,8 @@
       # Logging configuration (Use enable_logging to actually enable logging)
       genericLogTopics: ["log1"]
       genericLogTopicFrequencies: [10]
-      genericLogTopic_log1_Variables: ["stateEstimate.x", "ctrltarget.x"]
+      genericLogTopic_log1_Variables: ["range.front", "range.back", "range.up", "range.zrange", "range.left", "range.right"]
+      <!-- ["range.front", "range.back", "range.up", "range.zrange", "range.left", "range.right"] -->
       # firmware parameters for all drones (use crazyflieTypes.yaml to set per type, or
       # allCrazyflies.yaml to set per drone)
       firmwareParams:
@@ -34,14 +35,14 @@
       motion_capture_type: "vrpn" # one of none,vicon,optitrack,optitrack_closed_source,qualisys,vrpn
       object_tracking_type: "motionCapture" # one of motionCapture,libobjecttracker
       send_position_only: False # set to  S False to send position+orientation; set to True to send position only
-      motion_capture_host_name: "172.16.51.140"
+      motion_capture_host_name: "192.168.50.100"
       # motion_capture_interface_ip: "" # optional for optitrack with multiple interfaces
       save_point_clouds: "/dev/null" # set to a valid path to log mocap point cloud binary file.
       print_latency: False
       write_csvs: False
       force_no_cache: False
       enable_parameters: True
-      enable_logging: False
+      enable_logging: True
       enable_logging_pose: True
     </rosparam>
   </node>
@@ -59,5 +60,6 @@
 
   <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_x" args="/cf2/log1/values[0]"/> -->
   <!-- <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot_roll" args="/cf1/log1/values[2] /cf1/log1/values[3]"/> -->
+
 
 </launch>
