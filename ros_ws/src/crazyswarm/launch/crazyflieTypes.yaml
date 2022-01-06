@@ -105,7 +105,7 @@ crazyflieTypes:
         kd_omega_rp: 200 # roll and pitch angular velocity d gain
         kp_z: 1.25
         kd_z: 1.0
-        ki_z: 0.5 # 0.05
+        ki_z: 0.1 # 0.05
         i_range_z: 2.0
         mass: 0.110
         massThrust: 23000 # 23000 - full battery

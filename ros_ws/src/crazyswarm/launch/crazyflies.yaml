@@ -1,8 +1,22 @@
 crazyflies:
 - channel: 80
-  id: 1
+  id: 2
   initialPosition:
-  - 1.49311
-  - -6.12021
-  - 0.0547597
+  - -0.0
+  - -0.5
+  - 0.0
+  type: medium
+- channel: 80
+  id: 3
+  initialPosition:
+  - 3.0
+  - 2.5
+  - 0.0
+  type: medium
+- channel: 80
+  id: 4
+  initialPosition:
+  - -0.5
+  - 2.6
+  - 0.0
   type: medium

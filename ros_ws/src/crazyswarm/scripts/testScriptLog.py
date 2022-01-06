@@ -31,8 +31,12 @@ def range_callback(data):
 
 def land():
     timeHelper.sleep(1.0)
-    cf.land(targetHeight=0.05, duration=1.5)
-    timeHelper.sleep(2.0)
+    print("Switching to high level")
+    timeHelper.sleep(3.0)
+    cf.notifySetpointsStop()
+    print("switched")
+    cf.land(targetHeight=0.05, duration=2.0)
+    timeHelper.sleep(3.0)
     print("Successfuly landed!")
     
 
@@ -54,9 +58,11 @@ def main():
 
 def listener(programEnd):
     # rospy.init_node('ayo', anonymous=True)
- 
-    s = rospy.Subscriber("/cf1/log1", GenericLogData, range_callback)
-    rospy.on_shutdown(land)
+    # rospy.on_shutdown(land)
+    while not rospy.is_shutdown():
+        s = rospy.Subscriber("/cf5/log1", GenericLogData, range_callback)
+    land()
+    
     rospy.spin()
     # if not programEnd:
     #     rospy.spin()=
