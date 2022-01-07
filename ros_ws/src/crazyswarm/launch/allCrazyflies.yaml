@@ -7,10 +7,10 @@ crazyflies:
     channel: 80
     initialPosition: [3.0, 2.5, 0.0]
     type: medium
-  - id: 2
-    channel: 80
-    initialPosition: [-0.0, -0.5, 0.0]
-    type: medium
+  # - id: 2
+  #   channel: 80
+  #   initialPosition: [-0.0, -0.5, 0.0]
+  #   type: medium
   # - id: 4
   #   channel: 80
   #   initialPosition: [-0.5, 2.6, 0.0]
