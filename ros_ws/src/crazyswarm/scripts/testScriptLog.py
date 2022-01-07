@@ -12,21 +12,16 @@ z_range = 0
 POSITION_TO_KEEP = None
 
 def range_callback(data):
-    front_range = data.values[2] / 1000
+    up_range = data.values[2] / 1000
     pos = cf.position()
     go = pos + np.array([0.0, 0, -0.1])
-    print("up:  ", front_range )
+    print("up:  ", up_range )
     print("go:  ", go[2])
     print(cf.position())
     if front_range < 0.5:
         cf.cmdPosition(go, yaw=0.0)
     else:                                                                                                                     
         cf.cmdPosition(POSITION_TO_KEEP, yaw=0.0)
-    
-    # if z_range < 0.5:
-    # #    cf.cmdVel(0, 0, 0, 1)
-
-    #     cf.goTo(go, yaw=0.0, duration=1.0)
     
 
 def land():
@@ -57,21 +52,10 @@ def main():
 
 
 def listener(programEnd):
-    # rospy.init_node('ayo', anonymous=True)
-    # rospy.on_shutdown(land)
-    while not rospy.is_shutdown():
-        s = rospy.Subscriber("/cf5/log1", GenericLogData, range_callback)
-    land()
-    
+    rospy.on_shutdown(land)
+    s = rospy.Subscriber("/cf5/log1", GenericLogData, range_callback)
     rospy.spin()
-    # if not programEnd:
-    #     rospy.spin()=
-    # else:
-    #     print("here")
-    #     cf.land(targetHeight=0.05, duration=1.5)
-    #     rospy.wait_for_service('/cf2/land')
-    #     land = rospy.ServicePRoxy('/cf2/land', Land)
-    #     land(0, 0.05, 2)
+    
     
         
 
@@ -82,37 +66,6 @@ if __name__ == "__main__":
     cf.takeoff(targetHeight=1.0, duration=2.0)
     timeHelper.sleep(3.0)
     POSITION_TO_KEEP = cf.position()
-    
 
     listener(False)
     
-
-    # listener(True)
-    # swarm = Crazyswarm()
-    # timeHelper = swarm.timeHelper
-    # cf = swarm.allcfs.crazyflies[0]
-    # try:
-    #     listener(False)
-    # except KeyboardInterrupt:
-    #     listener(True)
-
-
-
-    
-    
-    
-    
-    
-    
-    # cf.land(targetHeight=0.05, duration=1.5)
-    # timeHelper.sleep(3.0)
-    # print("here")
-
-    # swarm = Crazyswarm()
-    # timeHelper = swarm.timeHelper
-    # cf = swarm.allcfs.crazyflies[0]
-    # # rospy.wait_for_service('/cf2/land')
-    # # land = rospy.ServicePRoxy('/cf2/land', Land)
-    # # land(0, 0.05, 2)
-    # cf.land(targetHeight=0.05, duration=1.5)
-    # timeHelper.sleep(3.0)

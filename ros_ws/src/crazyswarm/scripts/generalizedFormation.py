@@ -31,7 +31,6 @@ CURR_YAW = 0.0
 
 
 def getDronePosition(id):
-    print(id)
     ANGLE = (ANGLE_PER_DRONE * (id - 1)) + INITIAL_YAW
     Pos_x = CIRCLE_RADIUS * math.cos(ANGLE)
     Pos_y = CIRCLE_RADIUS * math.sin(ANGLE)

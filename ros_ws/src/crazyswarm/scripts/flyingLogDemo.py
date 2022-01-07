@@ -17,23 +17,6 @@ def log_stab_callback(timestamp, data, logconf):
 
 def main(scf, logconf):
     
-
-    # swarm = Crazyswarm()
-    # timeHelper = swarm.timeHelper
-    
-    # for cf in swarm.allcfs.crazyflies:
-    #     cf.log.add_config(logconf)
-    #     logconf.data_received_cb.add_callback(log_stab_callback)
-    #     logconf.start()
-
-    #     cf.takeoff(targetHeight=1.0, duration=TAKEOFF_DURATION)
-    #     timeHelper.sleep(TAKEOFF_DURATION)
-
-    #     cf.land(targetHeight = 0.04, duration=2.5)
-    #     timeHelper.sleep(TAKEOFF_DURATION)
-    #     logconf.stop()
-
-    # cf = swarm.allcfs.crazyflies[1]
     cf = scf.cf
     cf.log.add_config(logconf)
 
@@ -52,11 +35,6 @@ def main(scf, logconf):
 if __name__ == '__main__':
 
     lg_stab = LogConfig(name='range', period_in_ms=10)
-    # lg_stab.add_variable('range.front', 'float')
-    # lg_stab.add_variable('range.back', 'float')
-    # lg_stab.add_variable('range.up', 'float')
-    # lg_stab.add_variable('range.left', 'float')
-    # lg_stab.add_variable('range.right', 'float')
     lg_stab.add_variable('range.zrange', 'float')
 
 

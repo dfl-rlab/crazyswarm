@@ -55,7 +55,6 @@ if __name__ == "__main__":
     secondCF = allcfs.crazyflies[1]
     secondCF.enableCollisionAvoidance(others=[firstCf], ellipsoidRadii=np.array([0.3, 0.3, 1.0]))
     secondCF.takeoff(targetHeight=0.5, duration = 1.5)
-    secondCF.enableCollisionAvoidance(others=[firstCf], ellipsoidRadii=np.array([0.3, 0.3, 1.0]))
     timeHelper.sleep(2.0)
     
     secondCF.goTo(goal=getSecondPos(), yaw=0.0, duration = 3.0)

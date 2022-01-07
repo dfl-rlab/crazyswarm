@@ -72,42 +72,6 @@ def listener():
     return
 
 
-
-# def main():
-    
-#     swarm = Crazyswarm()
-#     timeHelper = swarm.timeHelper
-    
-#     Drone_list = swarm.allcfs.crazyflies
-#     allcfs = swarm.allcfs
-    
-#     NUMBER_OF_DRONES = len(Drone_list)
-
-#     ANGLE_PER_DRONE = (2 * math.pi) / NUMBER_OF_DRONES 
-
-#     CURR_CENTROID = INITIAL_CENTROID
-
-#     for i, cf in enumerate(Drone_list):
-        
-#         cf.enableCollisionAvoidance(others=Drone_list[:i], ellipsoidRadii=DEFAULT_ELLIPSOID)
-#         cf.takeoff(targetHeight=0.4, duration=1.0)
-#         timeHelper.sleep(2.0)
-        
-#         goToPos = getDronePosition(i + 1)
-#         cf.goTo(goal=goToPos, yaw=0.0, duration = 3.0)
-#         timeHelper.sleep(4.0)
-#         cf.disableCollisionAvoidance()
-
-#     timeHelper.sleep(5.0)
-#     allcfs.land(targetHeight=0.05, duration=2.0)
-#     timeHelper.sleep(3.0)
-#     return
-
-
-
-
-
-
 if __name__ == "__main__":
     
     swarm = Crazyswarm()
@@ -137,6 +101,5 @@ if __name__ == "__main__":
 
     timeHelper.sleep(5.0)
     listener()
-    # allcfs.land(targetHeight=0.05, duration=2.0)
-    # timeHelper.sleep(3.0)
+
     
