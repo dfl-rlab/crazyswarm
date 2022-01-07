@@ -277,7 +277,7 @@ Before mounting any decks please ensure that the orientation of the extension de
         motion_capture_type: "vrpn" # one of none,vicon,optitrack,optitrack_closed_source,qualisys,vrpn
         object_tracking_type: "motionCapture" # one of motionCapture,libobjecttracker
         send_position_only: False # set to  S False to send position+orientation; set to True to send position only
-        motion_capture_host_name: "172.16.51.140"
+        motion_capture_host_name: "192.168.50.100"
         # motion_capture_interface_ip: "" # optional for optitrack with multiple interfaces
         save_point_clouds: "/dev/null" # set to a valid path to log mocap point cloud binary file.
         print_latency: False
@@ -316,7 +316,7 @@ Before mounting any decks please ensure that the orientation of the extension de
       <rosparam>
         # tracking
         motion_capture_type: "vrpn" # one of vicon,optitrack,optitrack_closed_source,qualisys,vrpn
-        motion_capture_host_name: "172.16.51.140" #optitrack pc
+        motion_capture_host_name: "192.168.50.100" #optitrack pc
         # motion_capture_interface_ip: "" # optional for optitrack with multiple interfaces
       </rosparam>
     </node>
